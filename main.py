@@ -6,7 +6,6 @@ from elevenlabs.client import ElevenLabs
 from elevenlabs import VoiceSettings
 
 config = dotenv_values(".env")
-
 Eleven = config["Eleven_key_AUDIO"]
 
 def translator(audio_file):
@@ -69,7 +68,10 @@ web = gr.Interface(
         type="filepath",
         label="Español"
     ),
-    outputs=[gr.Audio(label="Ingles")],
+    outputs=[
+        gr.Audio(label="Ingles")
+        #En este espacio pueden añadir mas idiomas
+        ],
     title="Speech to Text Translator",
     description="Translate your speech to text"
 )
